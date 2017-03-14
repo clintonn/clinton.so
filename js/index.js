@@ -1,13 +1,16 @@
-var scene, camera, renderer, mesh, light
 
-scene = new THREE.Scene()
+const scene = new THREE.Scene()
 scene.background = new THREE.Color(0x122122)
-camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000)
-renderer = new THREE.WebGLRenderer({antialias: true, canvas: document.getElementById("logo")})
-renderer.setSize(window.innerWidth/2, window.innerHeight/2)
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000)
+const renderer = new THREE.WebGLRenderer({antialias: true, canvas: document.getElementById("logo")})
 
-let geometry = new THREE.OctahedronGeometry(1.5, 1)
-let material = new THREE.MeshLambertMaterial({
+const ratio = window.location.pathname === "/" ? 2 : 4
+
+renderer.setSize(window.innerWidth/ratio, window.innerHeight/ratio)
+
+let geometry = randomGeom()
+// const geometry = new THREE.DodecahedronGeometry(1.5, 0)
+const material = new THREE.MeshLambertMaterial({
   color: 0xffffff,
   wireframe: true,
   wireframeLinewidth: 3
@@ -36,10 +39,15 @@ l5.position.y = -1000
 l5.position.z = -3000
 
 
-mesh = new THREE.Mesh(geometry, material)
+const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh, l1, l2, l3, l4, l5)
 
 camera.position.z = 4
+
+function randomGeom() {
+  let geometries = [new THREE.OctahedronGeometry(1.5, 1), new THREE.IcosahedronGeometry(1.5, 0), new THREE.DodecahedronGeometry(1.5, 0), new THREE.OctahedronGeometry(1.5, 0)]
+  return geometries[Math.round(Math.random() * (geometries.length - 1))]
+}
 
 function animate() {
   requestAnimationFrame( animate );
@@ -48,13 +56,13 @@ function animate() {
 	renderer.render( scene, camera );
 }
 
-window.addEventListener( 'resize', onWindowResize, false );
 
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight
   camera.updateProjectionMatrix();
-  renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
-
+  renderer.setSize( window.innerWidth/ratio, window.innerHeight/ratio );
 }
 
 animate()
+
+window.addEventListener( 'resize', onWindowResize, false );

@@ -9,6 +9,11 @@ body {
   font-family: "ATC Harris", "Menlo", "Courier New", monospace;
 }
 
+*::selection {
+  background-color: #fff1dd;
+  color: #122122;
+}
+
 h1 {
   font-size: 2.5em;
 }
@@ -17,6 +22,15 @@ a {
   color: inherit;
   text-decoration: none;
   display: inline-block;
+}
+
+a:hover {
+  color: #32483d;
+  transition: color .3s ease;
+}
+
+strong {
+  color: #909e97;
 }
 
 #container {
@@ -29,6 +43,7 @@ a {
 
 .main * {
   margin: .6em 0;
+  line-height: 1.5em;
 }
 
 .main__heading {
@@ -40,14 +55,31 @@ a {
 }
 
 .main__heading--underline {
+  font-family: "ATC Harris", "Menlo", "Courier New", monospace;
   display: inline-block;
   padding-bottom: .2em;
   border-bottom: 4px solid #32483d;
 }
 
 .main__nav {
-  font-weight: bold;
   text-transform: uppercase;
   font-size: 0.7em;
   letter-spacing: 0.1em;
+}
+
+.main__nav > a {
+  padding-bottom: .2em;
+}
+
+.main__about-section {
+  margin: 2em auto;
+  max-width: 40%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (max-width: 740px) {
+  .main__about-section {
+    max-width: 90%;
+  }
 }
