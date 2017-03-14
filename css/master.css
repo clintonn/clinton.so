@@ -21,7 +21,10 @@ h1 {
 a {
   color: inherit;
   text-decoration: none;
-  display: inline-block;
+}
+
+p {
+  line-height: 1.6em;
 }
 
 a:hover {
@@ -57,7 +60,7 @@ strong {
 .main__heading--underline {
   font-family: "ATC Harris", "Menlo", "Courier New", monospace;
   display: inline-block;
-  padding-bottom: .2em;
+  padding-bottom: .7em;
   border-bottom: 4px solid #32483d;
   margin-bottom: 1em;
 }
@@ -66,6 +69,7 @@ strong {
   text-transform: uppercase;
   font-size: 0.7em;
   letter-spacing: 0.1em;
+  display: inline-block;
 }
 
 .main__nav > a {
@@ -75,55 +79,75 @@ strong {
 .main__about-section {
   font-size: 1.1em;
   margin: 2em auto;
-  max-width: 40%;
+  max-width: 90%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media screen and (max-width: 480px) {
-  .main__heading {
-    font-size: 200%;
+@media only screen and (min-width:320px) and (orientation: portrait) {
+  .main__about-section {
+    line-height: 1.6em;
+    max-width: 90%;
+  }
+
+  h1.main__heading {
+    font-size: 600%;
+  }
+
+  h3.main__heading {
+    font-size: 450%;
   }
 
   .main__nav {
-    font-size: 65%;
+    font-size: 175%;
   }
-}
 
-/* Add your styles for devices with a maximum width of 768 */
-
-@media screen and (max-width: 768px) {
-
-}
-
-/* Add your styles for devices with a maximum width of 320 */
-
-@media screen and (max-width: 320px) {
-
-}
-
-/* Add your styles for devices with a maximum width of 1024 */
-
-@media screen and (max-width: 1024px) {
   .main__about-section {
-    max-width: 90%;
+    font-size: 130%;
   }
 }
 
-/* iPads (landscape) and (portrait)  ----------- */
+@media (min-width:600px)  {
+  h1.main__heading {
+    line-height: 1.6em;
+    font-size: 480%;
+  }
 
-/* Add your styles for devices with a maximum width of 1024 */
+  h3.main__heading {
+    font-size: 260%;
+    padding-bottom: .2em;
+  }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .main__nav {
+    font-size: 175%;
+  }
 
+  .main__about-section {
+    font-size: 130%;
+  }
 }
 
-/* Add your styles for devices with a maximum width of 768 */
+@media (min-width:1025px) {
+  .main__about-section {
+    line-height: 1.6em;
+    max-width: 30%;
+  }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  h1.main__heading {
+    font-size: 300%;
+  }
 
+  h3.main__heading {
+    font-size: 130%;
+    padding-bottom: .2em;
+  }
+
+  .main__nav {
+    font-size: 70%;
+  }
+
+  .main__about-section {
+    font-size: 100%;
+  }
 }
-
-@media screen and (max-width: 740px) {
-
-}
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
