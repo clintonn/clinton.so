@@ -1,7 +1,53 @@
+@import "./typography/gt-america.css";
+@import "./typography/atc-harris.css";
+/*@import url('https://fonts.googleapis.com/css?family=Karla:400,700');*/
+
 body {
   margin: 0;
+  background-color: #122122;
+  color: #ded4c6;
+  font-family: "ATC Harris", "Menlo", "Courier New", monospace;
 }
 
-canvas {
-  overflow: hidden;
+h1 {
+  font-size: 2.5em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#container {
+  text-align: center;
+}
+
+.main {
+  min-width: 30%;
+}
+
+.main * {
+  margin: .6em 0;
+}
+
+.main__heading {
+  font-family: "GT America Black", "Futura", "Helvetica", sans-serif;
+  font-weight: 700;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 0;
+}
+
+.main__heading--underline {
+  display: inline-block;
+  padding-bottom: .2em;
+  border-bottom: 4px solid #32483d;
+}
+
+.main__nav {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
 }
