@@ -51,7 +51,7 @@ strong {
   font-weight: 700;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  margin-top: 0;
+  margin: 0;
 }
 
 .main__heading--underline {
@@ -59,6 +59,7 @@ strong {
   display: inline-block;
   padding-bottom: .2em;
   border-bottom: 4px solid #32483d;
+  margin-bottom: 1em;
 }
 
 .main__nav {
@@ -72,6 +73,7 @@ strong {
 }
 
 .main__about-section {
+  font-size: 1.1em;
   margin: 2em auto;
   max-width: 40%;
   -webkit-font-smoothing: antialiased;
