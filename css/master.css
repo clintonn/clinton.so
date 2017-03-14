@@ -80,8 +80,50 @@ strong {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 480px) {
+  .main__heading {
+    font-size: 200%;
+  }
+
+  .main__nav {
+    font-size: 65%;
+  }
+}
+
+/* Add your styles for devices with a maximum width of 768 */
+
+@media screen and (max-width: 768px) {
+
+}
+
+/* Add your styles for devices with a maximum width of 320 */
+
+@media screen and (max-width: 320px) {
+
+}
+
+/* Add your styles for devices with a maximum width of 1024 */
+
+@media screen and (max-width: 1024px) {
   .main__about-section {
     max-width: 90%;
   }
+}
+
+/* iPads (landscape) and (portrait)  ----------- */
+
+/* Add your styles for devices with a maximum width of 1024 */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+}
+
+/* Add your styles for devices with a maximum width of 768 */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+
+}
+
+@media screen and (max-width: 740px) {
+
 }
